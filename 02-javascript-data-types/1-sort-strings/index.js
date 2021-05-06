@@ -6,4 +6,9 @@
  */
 export function sortStrings(arr, param = 'asc') {
 
+  return [...arr].sort(function (a, b) {
+    let result = a.localeCompare(b, 'ru', {caseFirst: 'upper'});
+    return param === 'desc' ? -result : result;
+  });
+
 }
